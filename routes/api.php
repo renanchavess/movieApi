@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/movie/toprated/{page?}','MovieController@getByTopRated');
+Route::get('/movie/genres/{genresId?}', 'MovieController@getByGenres');
+Route::get('/movie/details/{movieId?}', 'MovieController@getMovie');
+Route::get('/movie/{page?}', 'MovieController@getByPage');
